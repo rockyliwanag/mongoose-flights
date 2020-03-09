@@ -1,35 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight List</title>
-</head>
-<body>
-    <a href="/flights/new">Add a Flight</a>
+<%- include('../partials/header') %>
+
+    <!-- <a href="/">Home</a>
+    <a href="/flights/new">Add Flight</a> -->
     <h1>Flight List</h1>
     <table>
         <thead>
             <tr>
                 <th>Airline</th>
-                <th>Flight Number</th>
+                <th>Flight #</th>
                 <th>Departure</th>
-                <th>International</th>
             </tr>
         </thead>
         <tbody>
             <!-- Iterate over movies array and write a 
         table row (<tr>) for each with 
         cols (<td>) that match the above headings (<th>) -->
-            <% movies.forEach(function(movie) { %>
+            <% flights.forEach(function(flight, idx) { %>
             <tr>
                 <td><%= flight.airline %></td>
                 <td><%= flight.flightNo %></td>
-                <td><%= flight.departs %></td>
-                <td><%= flight.international ? 'Yes' : 'No' %></td>
+                <td><%= flight.departs.toLocaleDateString() %></td>
+                <td><a href="/flights/<%= flight._id %>">Details</a></td>
+                <td><button>Delete</button></td>
             </tr>
             <% }); %>
         </tbody>
     </table>
-</body>
-</html>
+
+<%- include('../partials/footer') %>

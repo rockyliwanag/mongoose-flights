@@ -6,3 +6,41 @@ body {
 a {
   color: #00B7FF;
 }
+
+nav {
+  background-color: aliceblue;
+  padding: 2rem;
+  margin: 0;
+}
+
+td {
+  text-align: center;
+  border: .5px solid black;
+  column-gap: 0;
+}
+
+#show-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}
+
+#add-destination-form * {
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: .5rem auto;
+  text-align: center;
+}
+
+#add-destination-form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}
+
+#add-destination-form input[type="submit"] {
+  width: 8rem;
+  grid-column: 2/1;
+  margin-bottom: 2rem;
+}

@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>New Flight</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
+<%- include('../partials/header') %>
+
+    <!-- <a href="./">All Flights</a> -->
     <h2>Enter New Flight</h2>
     <form action="/flights" method="POST">
         <label>Airline
+            
+            <select name="airport">
+                <option value="--">--Select Airport--</option>
+                <option value="AUS">AUS</option>
+                <option value="DFW">DFW</option>
+                <option value="DEN">DEN</option>
+                <option value="LAX">LAX</option>
+                <option value="SAN">SAN</option>
+            </select>
             <select name="airline">
+                <option value="--">--Select Airline--</option>
                 <option value="American Airlines">American Airlines</option>
                 <option value="Southwest Airlines">Southwest Airlines</option>
                 <option value="United Airlines">United Airlines</option>
@@ -18,15 +22,12 @@
             </select>
         </label><br>
         <label>Flight Number:
-            <input type="number" name="flightNumber" placeholder= "101" min="100" max="999">
+            <input type="number" name="flightNo" placeholder= "101" min="10" max="9999">
         </label><br>
         <label>Departing date:
-            <input type="datetime-local" name="departingDate">
-        </label><br>
-        <label>International:
-            <input type="checkbox" name="international" checked>
+            <input type="datetime-local" name="departs">
         </label><br>
         <input type="submit" value="Add Flight">
     </form>
-</body>
-</html>
+
+<%- include('../partials/footer') %>
